@@ -1,95 +1,40 @@
+/* eslint-disable @next/next/no-img-element */
+import connectDB from '@/middleware/mongoose'
 import React from 'react'
-
-const computers = () => {
+import Link from 'next/link'
+import mongoose from 'mongoose'
+import products from '@/models/products'
+const computers = ({computers}) => {
   return (
     <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -m-4">
+    <div class="flex flex-wrap -m-4 justify-center">
+  {computers.map((computer)=>(
+    <div class="lg:w-1/4 md:w-1/2 p-4 m-4 w-full shadow-lg hover:transition hover:transition-all hover:scale-110 hover:animate-spin" key={computer._id}>
+    <Link passHref={true} href={`/product/${computer.slug}`}>
       
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://thumbs.dreamstime.com/b/desktop-computer-isolated-2240001.jpg" />
-        </a>
+        <img className='m-auto h-40 fill-current object-cover object-center block shadow-md' alt="ecommerce" src={computer.img} />
         <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Dell Core i5 6th gen</h2>
-          <p class="mt-1">PKR 65000</p>
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{computer.category}</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">{computer.title}</h2>
+          <p class="mt-1">PKR {computer.price}</p>
+          <p class="mt-1">Available Qty {computer.availableQty}</p>
         </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.apple.com/newsroom/images/product/mac/standard/Apple-iMac-gets-2x-more-performance-03192019_big.jpg.large.jpg" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">MAC 2019</h2>
-          <p class="mt-1">PKR 105000</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://computerchoice.pk/wp-content/uploads/2021/12/Dell-Optiplex-9020-Tower-PC-2.jpg" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Compact Gaming PC</h2>
-          <p class="mt-1">PKR 40000</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://static-01.daraz.pk/p/269258dff1eaa13921ec073d6d057564.jpg_750x750.jpg_.webp" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Gaming PC With RGB Case</h2>
-          <p class="mt-1">PKR 185000</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://basitcomputers.com/wp-content/uploads/2022/09/i5-4th-generation-tower-pc-with-gtx-660-2gb-rgb-gaming-case-custom-build-pc.jpg" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Dell Core i5 6th gen</h2>
-          <p class="mt-1">PKR 65000</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://www.shopperspk.com/wp-content/uploads/2020/09/hp-elite-6200-desktop-intel-ci5-2nd-gen-in-pakistan.jpg" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">MAC 2019</h2>
-          <p class="mt-1">PKR 105000</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://techmatched.pk/wp-content/uploads/2022/06/1-20.png" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Compact Gaming PC</h2>
-          <p class="mt-1">PKR 40000</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full shadow-md">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://static-01.daraz.pk/p/c0971b5c3376571e67ac49d19ece2a98.jpg_750x750.jpg_.webp" />
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Computers</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Gaming PC With RGB Case</h2>
-          <p class="mt-1">PKR 185000</p>
-        </div>
-      </div>
+    </Link>
+    </div>
+  ))}
+
     </div>
   </div>
 </section>
   )
 }
-
+export const getServerSideProps = (async () => {
+  if(!mongoose.connections[0].readyState){
+    mongoose.connect("mongodb://127.0.0.1:27017/cybershop?directConnection=true&serverSelectionTimeoutMS=2000")
+}
+  const data = await products.find()
+  let computers = await JSON.parse(JSON.stringify(data))
+  return {props:{computers}}
+})
 export default computers
