@@ -103,8 +103,7 @@ const Slug = ({cart}) => {
           <button onClick={handleCheck} className="flex ml-auto mr-12 text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Check Availability</button>
 
         </div>
-        {check && check!== null && <p className='ml-1 mt-1 text-green-400'>We Serve in this location</p>}
-        {!check && check!== null && <p className='ml-1 mt-1 text-red-500'>We Don not serve in this location</p>}
+        {check!==null && check ? (<p className='ml-1 mt-1 text-green-400'>We Serve in this location</p>):(<p className='ml-1 mt-1 text-red-500'>We Don not serve in this location</p>)}
       </div>
 
     </div>

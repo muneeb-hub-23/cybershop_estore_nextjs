@@ -54,6 +54,9 @@ const Navbar = ({cart}) => {
             </div>
           </li>
 ))}
+<li className='flex mt-2 mr-2 bg-purple-100 shadow-lg rounded-sm'>
+  Subtotal PKR {cart.subTotal}
+</li>
         </ol>
         <button className='bg-purple-900 text-white mt-3 p-3 hover:bg-purple-500 rounded-sm'>Proceed To Checkout</button>
         <button onClick={cart.clearCart} className='ml-3 mr-0 bg-red-900 text-white mt-3 p-3 hover:bg-purple-500 rounded-sm'>Clear Cart</button>
