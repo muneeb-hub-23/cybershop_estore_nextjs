@@ -5,6 +5,8 @@ import { IoMdCart } from "react-icons/io";
 import { useRef } from 'react';
 import { IoIosCloseCircle } from "react-icons/io";
 import { AiTwotonePlusCircle, AiTwotoneMinusCircle } from "react-icons/ai";
+import { RiAccountCircleFill } from "react-icons/ri";
+
 
 
 const Navbar = ({cart}) => {
@@ -34,6 +36,9 @@ const Navbar = ({cart}) => {
         <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           <IoMdCart onClick={handleToggle} className="w-4 h-4 ml-1 text-purple-800" />
         </button>
+        <Link href={"/login"}><RiAccountCircleFill className="w-4 h-4 ml-1 text-purple-800"/></Link>
+        
+
       </div>
 
       <div className="cart p-0 pl-2 fixed top-0 right-0 h-full z-10 w-80 bg-purple-400 transform transition-all	 translate-x-full" ref={sidebar}>
