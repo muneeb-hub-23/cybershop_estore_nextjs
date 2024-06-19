@@ -5,9 +5,7 @@ const connectDB = handler => async (req,res) =>{
         return handler(req,res)
     }
 
-    const MONGO_URI = "mongodb://127.0.0.1:27017/cybershop?directConnection=true&serverSelectionTimeoutMS=2000";
-
-await mongoose.connect(MONGO_URI, {
+await mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {

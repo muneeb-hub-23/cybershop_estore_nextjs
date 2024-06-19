@@ -21,7 +21,7 @@ const Navbar = ({cart}) => {
     }
   }
   return (
-    <header className="text-gray-600 body-font">
+    <header className="sticky top-0 bg-white text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href={"/"} className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <Image alt={"Cyber Sho"} src={"/logo.png"} priority="lazyOnLoad" width={450} height={250} className="w-20 h-10 rounded-full" />
