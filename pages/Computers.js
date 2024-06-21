@@ -10,7 +10,7 @@ const computers = ({computers}) => {
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-4 justify-center">
   {computers.map((computer)=>(
-    <div class="lg:w-1/4 md:w-1/2 p-4 m-4 w-full shadow-lg hover:transition-all hover:scale-110 hover:animate-spin" key={computer._id}>
+    <div class="lg:w-1/4 md:w-1/2 p-4 m-4 w-full shadow-lg hover:transition-all hover:scale-110" key={computer._id}>
     <Link passHref={true} href={`/product/${computer._id}`}>
       
         <img className='m-auto h-40 fill-current object-cover object-center block shadow-md' alt="ecommerce" src={computer.img} />

@@ -15,7 +15,7 @@ const Checkout = ({cart,subTotal}) => {
 
           {Object.keys(cart.liveCart).length == 0 && <div className='flex mt-2 mr-2 bg-purple-100 shadow-lg rounded-sm'>No Items in the Cart</div>}
           {Object.keys(cart.liveCart).map((k)=>(
-          <li key={k} className='flex mt-2 mr-2 bg-purple-100 shadow-lg rounded-sm'>
+          <li key={k} className='flex mt-2 mx-5 bg-purple-100 shadow-lg rounded-sm hover:transition-all hover:scale-105'>
             <div className="ml-2 pr-1 w-3/5">
               <p>{cart.liveCart[k].name}</p>
             </div>
@@ -26,7 +26,7 @@ const Checkout = ({cart,subTotal}) => {
             </div>
           </li>
 ))}
-<li className='flex mt-2 mr-2 bg-purple-100 shadow-lg rounded-sm'>
+<li className='flex mt-2 mx-5 bg-purple-100 shadow-lg rounded-sm'>
   Subtotal PKR {cart.subTotal}
 </li>
         </ol>

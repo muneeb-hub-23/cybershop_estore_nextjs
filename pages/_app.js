@@ -2,6 +2,7 @@ import '../app/globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useEffect, useState } from 'react'
+
 function MyApp({ Component, pageProps }) {
 const [liveCart,setLiveCart] = useState({})
 const [subTotal,setSubTotal] = useState(800)
